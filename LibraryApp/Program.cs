@@ -59,13 +59,19 @@ namespace LibraryApp
                         Console.WriteLine("Insert Title:");
                         Console.WriteLine("---------------------------------------------");
                         string titleSearchInput = Console.ReadLine();
+                        bool titleFound = false;
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
                         {
                             if (LibraryList[i].Title == titleSearchInput)
                             {
                                 Console.WriteLine(LibraryList[i].Title + " - " + LibraryList[i].Author);
+                                titleFound = true;
                             }
+                        }
+                        if (titleFound == false)
+                        {
+                            Console.WriteLine("Title not found!");
                         }
                         // Matches books with the title inputted and prints them
                         Console.WriteLine("---------------------------------------------");
@@ -76,13 +82,19 @@ namespace LibraryApp
                         Console.WriteLine("Insert Author:");
                         Console.WriteLine("---------------------------------------------");
                         string authorSearchInput = Console.ReadLine();
+                        bool authorFound = false;
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
                         {
                             if (LibraryList[i].Author == authorSearchInput)
                             {
                                 Console.WriteLine(LibraryList[i].Title + " - " + LibraryList[i].Author);
+                                authorFound = true;
                             }
+                        }
+                        if (authorFound == false)
+                        {
+                            Console.WriteLine("Author not found!");
                         }
                         // Does the same as the title one but for authors instead.
                         Console.WriteLine("---------------------------------------------");
@@ -227,13 +239,36 @@ namespace LibraryApp
                                 string newBookTitle = Console.ReadLine();
                                 Console.WriteLine("Who is the book's author?");
                                 string newBookAuthor = Console.ReadLine();
-                                BookClass book = new BookClass(newBookTitle, newBookAuthor, false);
-                                LibraryList.Add(book);
+                                BookClass bookAdd = new BookClass(newBookTitle, newBookAuthor, false);
+                                LibraryList.Add(bookAdd);
                                 Console.WriteLine("Your book has been added. Press any key to continue.");
                                 Console.ReadKey();
                                 break;
                             // This just takes your inputs and shoves them in the list as a new book.
                             case "3":
+                                Console.WriteLine("What is the Title of the Book you want to remove?");
+                                string removeBook = Console.ReadLine();
+                                bool removeBookFound = false;
+                                Console.WriteLine("---------------------------------------------");
+                                for (int i = 0; i < LibraryList.Count; i++)
+                                {
+                                    if (LibraryList[i].Title == removeBook)
+                                    {
+                                        LibraryList.Remove(LibraryList[i]);
+                                        removeBookFound = true;
+                                        Console.WriteLine("Book removed!");
+                                        Console.WriteLine("---------------------------------------------");
+                                        Console.WriteLine("Press any key to continue.");
+                                        Console.ReadKey();
+                                    }
+                                }
+                                if (removeBookFound == false)
+                                {
+                                    Console.WriteLine("Book not found!");
+                                    Console.WriteLine("---------------------------------------------");
+                                    Console.WriteLine("Press any key to continue.");
+                                    Console.ReadKey();
+                                }
                                 break;
                         }
                         break;
