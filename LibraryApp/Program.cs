@@ -26,8 +26,16 @@ namespace LibraryApp
             LibraryList.Add(DefaultBook5);
             BookClass DefaultBook6 = new BookClass("What's Actually in YOUR Siracha Mayo?", "WiiPressen Author Man", false);
             LibraryList.Add(DefaultBook6);
-            BookClass DefaultBook7 = new BookClass("", "", false);
+            BookClass DefaultBook7 = new BookClass("Diet foods YOU won't believe!", "David G Stand", false);
             LibraryList.Add(DefaultBook7);
+            BookClass DefaultBook8 = new BookClass("Basketball during a crisis", "Samuel Bell Jackson", false);
+            LibraryList.Add(DefaultBook8);
+            BookClass DefaultBook9 = new BookClass("Fashion, a guide", "Lishi Dumpling", false);
+            LibraryList.Add(DefaultBook9);
+            BookClass DefaultBook10 = new BookClass("Underrated Ecchi", "Sebastian Anime", false);
+            LibraryList.Add(DefaultBook10);
+            BookClass DefaultBook11 = new BookClass("Snaigk", "Lukas Developer Man", false);
+            LibraryList.Add(DefaultBook11);
             // This adds default books to the list so you don't have to add them yourself.
             while (loopthingy)
             {
