@@ -26,6 +26,8 @@ namespace LibraryApp
             LibraryList.Add(DefaultBook5);
             BookClass DefaultBook6 = new BookClass("What's Actually in YOUR Siracha Mayo?", "WiiPressen Author Man", false);
             LibraryList.Add(DefaultBook6);
+            BookClass DefaultBook7 = new BookClass("", "", false);
+            LibraryList.Add(DefaultBook7);
             // This adds default books to the list so you don't have to add them yourself.
             while (loopthingy)
             {
@@ -57,7 +59,7 @@ namespace LibraryApp
                                 Console.WriteLine(LibraryList[i].Title + " - " + LibraryList[i].Author);
                             }
                         }
-                        // Loops the list around so you can get all the titles
+                        // Matches books with the title inputted and prints them
                         Console.WriteLine("---------------------------------------------");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
@@ -80,9 +82,102 @@ namespace LibraryApp
                         Console.ReadKey();
                         break;
                     case "3":
+                        Console.WriteLine("Which book would you like to loan?");
+                        Console.WriteLine("---------------------------------------------");
+                        for (int i = 0; i < LibraryList.Count; i++)
+                        {
+                            if (LibraryList[i].IsBorrowed == false)
+                            {
+                                Console.WriteLine(LibraryList[i].Title + " - " + LibraryList[i].Author);
+                            }
+                            // Fun Fact: I'm retarded.
+                            // I tried to make it: if(LibraryList[i].IsBorrowed == true){
+                            //                     break;}
+                            // That didn't work, and all I needed was to make a false check.
+                            // Haha, it took me so long to find that out :^)
+                        }
+                        Console.WriteLine("---------------------------------------------");
+                        string loanSelection = Console.ReadLine();
+                        bool bookFoundLoan = false;
+                        Console.WriteLine("---------------------------------------------");
+                        for (int i = 0; i < LibraryList.Count; i++)
+                        {
+                            if (LibraryList[i].Title == loanSelection)
+                            {
+                                if (LibraryList[i].IsBorrowed == false)
+                                {
+                                    LibraryList[i].IsBorrowed = true;
+                                    Console.WriteLine("Book Loaned!");
+                                    Console.WriteLine("---------------------------------------------");
+                                    Console.WriteLine("Press any key to continue.");
+                                    Console.ReadKey();
+                                    bookFoundLoan = true;
+                                } // This checks if the book is borrowed, if it isn't then it loans the book.
+                                else if(LibraryList[i].IsBorrowed == true)
+                                {
+                                    Console.WriteLine("That book has already been loaned!");
+                                    Console.WriteLine("---------------------------------------------");
+                                    Console.WriteLine("Press any key to continue.");
+                                    Console.ReadKey();
+                                    bookFoundLoan = true;
+                                } // If the book is already loaned, it tells you.
+                            }
+                        }
+                        if (bookFoundLoan == false)
+                        {
+                            Console.WriteLine("No Book Found!");
+                            Console.WriteLine("---------------------------------------------");
+                            Console.WriteLine("Press any key to continue.");
+                            Console.ReadKey();
+                        }
                         break;
+                        // If the book can't be found, it'll tell you that as well.
                     case "4":
+                        Console.WriteLine("Which book are you returning?");
+                        Console.WriteLine("---------------------------------------------");
+                        for (int i = 0; i < LibraryList.Count; i++)
+                        {
+                            if (LibraryList[i].IsBorrowed == true)
+                            {
+                                Console.WriteLine(LibraryList[i].Title + " - " + LibraryList[i].Author);
+                            }
+                        }
+                        Console.WriteLine("---------------------------------------------");
+                        string returnSelection = Console.ReadLine();
+                        bool bookFoundReturn = false;
+                        Console.WriteLine("---------------------------------------------");
+                        for (int i = 0; i < LibraryList.Count; i++)
+                        {
+                            if (LibraryList[i].Title == returnSelection)
+                            {
+                                if (LibraryList[i].IsBorrowed == true)
+                                {
+                                    LibraryList[i].IsBorrowed = false;
+                                    Console.WriteLine("Book Returned!");
+                                    Console.WriteLine("---------------------------------------------");
+                                    Console.WriteLine("Press any key to continue.");
+                                    Console.ReadKey();
+                                    bookFoundReturn = true;
+                                }
+                                else if (LibraryList[i].IsBorrowed == false)
+                                {
+                                    Console.WriteLine("That book is still here!");
+                                    Console.WriteLine("---------------------------------------------");
+                                    Console.WriteLine("Press any key to continue.");
+                                    Console.ReadKey();
+                                    bookFoundReturn = true;
+                                }
+                            }
+                        }
+                        if (bookFoundReturn == false)
+                        {
+                            Console.WriteLine("No Book Found!");
+                            Console.WriteLine("---------------------------------------------");
+                            Console.WriteLine("Press any key to continue.");
+                            Console.ReadKey();
+                        }
                         break;
+                        // THIS IS BASICALLY THE SAME AS THE LOANING, BUT IN REVERSE
                     case "5":
                         Console.WriteLine("LIST OF ALL CURRENT BOOKS:");
                         Console.WriteLine("---------------------------------------------");
@@ -140,7 +235,7 @@ namespace LibraryApp
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
                         break;
-                    // Error message because they're cool
+                    // Error message, because you're epic.
                 }
             }
         }
