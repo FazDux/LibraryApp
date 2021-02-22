@@ -58,12 +58,12 @@ namespace LibraryApp
                     case "1":
                         Console.WriteLine("Insert Title:");
                         Console.WriteLine("---------------------------------------------");
-                        string titleSearchInput = Console.ReadLine();
+                        string titleSearchInput = Console.ReadLine().ToLower();
                         bool titleFound = false;
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
                         {
-                            if (LibraryList[i].Title == titleSearchInput)
+                            if (LibraryList[i].Title.ToLower() == titleSearchInput)
                             {
                                 Console.WriteLine(LibraryList[i].Title + " - " + LibraryList[i].Author);
                                 titleFound = true;
@@ -77,16 +77,17 @@ namespace LibraryApp
                         Console.WriteLine("---------------------------------------------");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     case "2":
                         Console.WriteLine("Insert Author:");
                         Console.WriteLine("---------------------------------------------");
-                        string authorSearchInput = Console.ReadLine();
+                        string authorSearchInput = Console.ReadLine().ToLower();
                         bool authorFound = false;
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
                         {
-                            if (LibraryList[i].Author == authorSearchInput)
+                            if (LibraryList[i].Author.ToLower() == authorSearchInput)
                             {
                                 Console.WriteLine(LibraryList[i].Title + " - " + LibraryList[i].Author);
                                 authorFound = true;
@@ -100,6 +101,7 @@ namespace LibraryApp
                         Console.WriteLine("---------------------------------------------");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     case "3":
                         Console.WriteLine("Which book would you like to loan?");
@@ -117,12 +119,12 @@ namespace LibraryApp
                             // Haha, it took me so long to find that out :^)
                         }
                         Console.WriteLine("---------------------------------------------");
-                        string loanSelection = Console.ReadLine();
+                        string loanSelection = Console.ReadLine().ToLower();
                         bool bookFoundLoan = false;
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
                         {
-                            if (LibraryList[i].Title == loanSelection)
+                            if (LibraryList[i].Title.ToLower() == loanSelection)
                             {
                                 if (LibraryList[i].IsBorrowed == false)
                                 {
@@ -131,6 +133,7 @@ namespace LibraryApp
                                     Console.WriteLine("---------------------------------------------");
                                     Console.WriteLine("Press any key to continue.");
                                     Console.ReadKey();
+                                    Console.Clear();
                                     bookFoundLoan = true;
                                 } // This checks if the book is borrowed, if it isn't then it loans the book.
                                 else if(LibraryList[i].IsBorrowed == true)
@@ -139,6 +142,7 @@ namespace LibraryApp
                                     Console.WriteLine("---------------------------------------------");
                                     Console.WriteLine("Press any key to continue.");
                                     Console.ReadKey();
+                                    Console.Clear();
                                     bookFoundLoan = true;
                                 } // If the book is already loaned, it tells you.
                             }
@@ -149,6 +153,7 @@ namespace LibraryApp
                             Console.WriteLine("---------------------------------------------");
                             Console.WriteLine("Press any key to continue.");
                             Console.ReadKey();
+                            Console.Clear();
                         }
                         break;
                         // If the book can't be found, it'll tell you that as well.
@@ -163,12 +168,12 @@ namespace LibraryApp
                             }
                         }
                         Console.WriteLine("---------------------------------------------");
-                        string returnSelection = Console.ReadLine();
+                        string returnSelection = Console.ReadLine().ToLower();
                         bool bookFoundReturn = false;
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
                         {
-                            if (LibraryList[i].Title == returnSelection)
+                            if (LibraryList[i].Title.ToLower() == returnSelection)
                             {
                                 if (LibraryList[i].IsBorrowed == true)
                                 {
@@ -177,6 +182,7 @@ namespace LibraryApp
                                     Console.WriteLine("---------------------------------------------");
                                     Console.WriteLine("Press any key to continue.");
                                     Console.ReadKey();
+                                    Console.Clear();
                                     bookFoundReturn = true;
                                 }
                                 else if (LibraryList[i].IsBorrowed == false)
@@ -185,6 +191,7 @@ namespace LibraryApp
                                     Console.WriteLine("---------------------------------------------");
                                     Console.WriteLine("Press any key to continue.");
                                     Console.ReadKey();
+                                    Console.Clear();
                                     bookFoundReturn = true;
                                 }
                             }
@@ -195,10 +202,12 @@ namespace LibraryApp
                             Console.WriteLine("---------------------------------------------");
                             Console.WriteLine("Press any key to continue.");
                             Console.ReadKey();
+                            Console.Clear();
                         }
                         break;
                         // THIS IS BASICALLY THE SAME AS THE LOANING, BUT IN REVERSE
                     case "5":
+                        Console.Clear();
                         Console.WriteLine("LIST OF ALL CURRENT BOOKS:");
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
@@ -235,6 +244,7 @@ namespace LibraryApp
                             case "1":
                                 break;
                             case "2":
+                                Console.WriteLine("---------------------------------------------");
                                 Console.WriteLine("What is the book's title?");
                                 string newBookTitle = Console.ReadLine();
                                 Console.WriteLine("Who is the book's author?");
@@ -243,9 +253,11 @@ namespace LibraryApp
                                 LibraryList.Add(bookAdd);
                                 Console.WriteLine("Your book has been added. Press any key to continue.");
                                 Console.ReadKey();
+                                Console.Clear();
                                 break;
                             // This just takes your inputs and shoves them in the list as a new book.
                             case "3":
+                                Console.WriteLine("---------------------------------------------");
                                 Console.WriteLine("What is the Title of the Book you want to remove?");
                                 string removeBook = Console.ReadLine();
                                 bool removeBookFound = false;
@@ -260,6 +272,7 @@ namespace LibraryApp
                                         Console.WriteLine("---------------------------------------------");
                                         Console.WriteLine("Press any key to continue.");
                                         Console.ReadKey();
+                                        Console.Clear();
                                     }
                                 }
                                 if (removeBookFound == false)
@@ -268,6 +281,7 @@ namespace LibraryApp
                                     Console.WriteLine("---------------------------------------------");
                                     Console.WriteLine("Press any key to continue.");
                                     Console.ReadKey();
+                                    Console.Clear();
                                 }
                                 break;
                         }
@@ -277,6 +291,7 @@ namespace LibraryApp
                         Console.WriteLine("That's not an option");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     // Error message, because you're epic.
                 }
