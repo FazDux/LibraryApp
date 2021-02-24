@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\GitHub\\LibraryApp\\LibraryApp\\LibraryApp.csproj": {}
+    "C:\\Git\\LibraryApp\\LibraryApp\\LibraryApp.csproj": {}
   },
   "projects": {
-    "D:\\GitHub\\LibraryApp\\LibraryApp\\LibraryApp.csproj": {
+    "C:\\Git\\LibraryApp\\LibraryApp\\LibraryApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\GitHub\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
+        "projectUniqueName": "C:\\Git\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
         "projectName": "LibraryApp",
-        "projectPath": "D:\\GitHub\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
-        "packagesPath": "C:\\Users\\shock\\.nuget\\packages\\",
-        "outputPath": "D:\\GitHub\\LibraryApp\\LibraryApp\\obj\\",
+        "projectPath": "C:\\Git\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
+        "packagesPath": "C:\\Users\\19argo\\.nuget\\packages\\",
+        "outputPath": "C:\\Git\\LibraryApp\\LibraryApp\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\shock\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\19argo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,7 +50,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Users\\19argo\\.dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

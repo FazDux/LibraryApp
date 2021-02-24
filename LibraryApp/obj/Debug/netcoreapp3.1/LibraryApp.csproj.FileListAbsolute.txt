@@ -11,3 +11,16 @@ D:\GitHub\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.csproj.CoreCo
 D:\GitHub\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.dll
 D:\GitHub\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.pdb
 D:\GitHub\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.genruntimeconfig.cache
+C:\Git\LibraryApp\LibraryApp\bin\Debug\netcoreapp3.1\LibraryApp.exe
+C:\Git\LibraryApp\LibraryApp\bin\Debug\netcoreapp3.1\LibraryApp.deps.json
+C:\Git\LibraryApp\LibraryApp\bin\Debug\netcoreapp3.1\LibraryApp.runtimeconfig.json
+C:\Git\LibraryApp\LibraryApp\bin\Debug\netcoreapp3.1\LibraryApp.runtimeconfig.dev.json
+C:\Git\LibraryApp\LibraryApp\bin\Debug\netcoreapp3.1\LibraryApp.dll
+C:\Git\LibraryApp\LibraryApp\bin\Debug\netcoreapp3.1\LibraryApp.pdb
+C:\Git\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.csprojAssemblyReference.cache
+C:\Git\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.AssemblyInfoInputs.cache
+C:\Git\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.AssemblyInfo.cs
+C:\Git\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.csproj.CoreCompileInputs.cache
+C:\Git\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.dll
+C:\Git\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.pdb
+C:\Git\LibraryApp\LibraryApp\obj\Debug\netcoreapp3.1\LibraryApp.genruntimeconfig.cache

@@ -1,6 +1,8 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 
 namespace LibraryApp
 {
@@ -14,29 +16,48 @@ namespace LibraryApp
         
         static void Main(string[] args)
         {
-            BookClass DefaultBook1 = new BookClass("WiiPressen: A History", "WiiPressen Author Man", false);
-            LibraryList.Add(DefaultBook1);
-            BookClass DefaultBook2 = new BookClass("All About Anime", "Sebastian Anime", false);
-            LibraryList.Add(DefaultBook2);
-            BookClass DefaultBook3 = new BookClass("Why Change is EVIL and Must be STOPPED at ALL COSTS", "Doctor Axel, PhD", false);
-            LibraryList.Add(DefaultBook3);
-            BookClass DefaultBook4 = new BookClass("How 2 Making Video Games", "Lukas Developer Man", false);
-            LibraryList.Add(DefaultBook4);
-            BookClass DefaultBook5 = new BookClass("Kanye > Everything Else", "Will I Am", false);
-            LibraryList.Add(DefaultBook5);
-            BookClass DefaultBook6 = new BookClass("What's Actually in YOUR Siracha Mayo?", "WiiPressen Author Man", false);
-            LibraryList.Add(DefaultBook6);
-            BookClass DefaultBook7 = new BookClass("Diet foods YOU won't believe!", "David G Stand", false);
-            LibraryList.Add(DefaultBook7);
-            BookClass DefaultBook8 = new BookClass("Basketball during a crisis", "Samuel Bell Jackson", false);
-            LibraryList.Add(DefaultBook8);
-            BookClass DefaultBook9 = new BookClass("Fashion, a guide", "Lishi Dumpling", false);
-            LibraryList.Add(DefaultBook9);
-            BookClass DefaultBook10 = new BookClass("Underrated Ecchi", "Sebastian Anime", false);
-            LibraryList.Add(DefaultBook10);
-            BookClass DefaultBook11 = new BookClass("Snaigk", "Lukas Developer Man", false);
-            LibraryList.Add(DefaultBook11);
+            // BookClass DefaultBook1 = new BookClass("WiiPressen: A History", "WiiPressen Author Man", false);
+            // LibraryList.Add(DefaultBook1);
+            // BookClass DefaultBook2 = new BookClass("All About Anime", "Sebastian Anime", false);
+            // LibraryList.Add(DefaultBook2);
+            // BookClass DefaultBook3 = new BookClass("Why Change is EVIL and Must be STOPPED at ALL COSTS", "Doctor Axel, PhD", false);
+            // LibraryList.Add(DefaultBook3);
+            // BookClass DefaultBook4 = new BookClass("How 2 Making Video Games", "Lukas Developer Man", false);
+            // LibraryList.Add(DefaultBook4);
+            // BookClass DefaultBook5 = new BookClass("Kanye > Everything Else", "Will I Am", false);
+            // LibraryList.Add(DefaultBook5);
+            // BookClass DefaultBook6 = new BookClass("What's Actually in YOUR Siracha Mayo?", "WiiPressen Author Man", false);
+            // LibraryList.Add(DefaultBook6);
+            // BookClass DefaultBook7 = new BookClass("Diet foods YOU won't believe!", "David G Stand", false);
+            // LibraryList.Add(DefaultBook7);
+            // BookClass DefaultBook8 = new BookClass("Basketball during a crisis", "Samuel Bell Jackson", false);
+            // LibraryList.Add(DefaultBook8);
+            // BookClass DefaultBook9 = new BookClass("Fashion, a guide", "Lishi Dumpling", false);
+            // LibraryList.Add(DefaultBook9);
+            // BookClass DefaultBook10 = new BookClass("Underrated Ecchi", "Sebastian Anime", false);
+            // LibraryList.Add(DefaultBook10);
+            // BookClass DefaultBook11 = new BookClass("Snaigk", "Lukas Developer Man", false);
+            // LibraryList.Add(DefaultBook11);
             // This adds default books to the list so you don't have to add them yourself.
+            // I HAVE TO REWRITE ALL THIS SO IT SAVES IN A TEXT FILE AAAAAAAAAAAAAAAAAAAAAAA
+            // :)
+
+            using (StreamReader sr = File.OpenText("Books.txt"))
+            {
+                string s;
+                while ((s = sr.ReadLine()) != null)
+                {
+                    string[] linearray = s.Split("|");
+                    bool isborrowed = linearray[2] == "True";
+                    BookClass book = new BookClass(linearray[0],linearray[1],isborrowed);
+                    LibraryList.Add(book);
+                }
+                // makes an array and splits the books with the designated separator "|"
+                // checks to see if the book is borrowed
+                // creates a book using these attributes
+                // adds a book to the librarylist using what was written in the text file
+            }
+            
             while (loopthingy)
             {
                 Console.WriteLine("---------------------------------------------");
@@ -59,6 +80,7 @@ namespace LibraryApp
                         Console.WriteLine("Insert Title:");
                         Console.WriteLine("---------------------------------------------");
                         string titleSearchInput = Console.ReadLine().ToLower();
+                        // I had to make the program case insensitive because my brother doesn't like to use capital letters
                         bool titleFound = false;
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
@@ -296,6 +318,16 @@ namespace LibraryApp
                     // Error message, because you're epic.
                 }
             }
+            using (StreamWriter sw = File.CreateText("Books.txt"))
+            {
+                for (int i = 0; i < LibraryList.Count; i++)
+                {
+                    BookClass book = LibraryList[i];
+                    sw.WriteLine(book.Title + "|" + book.Author + "|" + book.IsBorrowed);
+                }
+                // Writes whatever was in LibraryList when the program was stopped to the file.
+            }
+
         }
     }
 }
