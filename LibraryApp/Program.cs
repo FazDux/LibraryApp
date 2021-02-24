@@ -57,6 +57,7 @@ namespace LibraryApp
                 // creates a book using these attributes
                 // adds a book to the librarylist using what was written in the text file
             }
+            // This wasn't as hard as I thought it would be
             
             while (loopthingy)
             {
