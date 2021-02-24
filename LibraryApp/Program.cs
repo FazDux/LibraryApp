@@ -62,7 +62,6 @@ namespace LibraryApp
             
             while (loopthingy)
             {
-                Console.WriteLine("---------------------------------------------");
                 Console.WriteLine("Welcome to the Library of ALL knowledge.");
                 Console.WriteLine("Please select an option.");
                 Console.WriteLine("---------------------------------------------");
@@ -79,6 +78,7 @@ namespace LibraryApp
                 switch (input)
                 {
                     case "1":
+                        Console.Clear();
                         Console.WriteLine("Insert Title:");
                         Console.WriteLine("---------------------------------------------");
                         string titleSearchInput = Console.ReadLine().ToLower();
@@ -104,6 +104,7 @@ namespace LibraryApp
                         Console.Clear();
                         break;
                     case "2":
+                        Console.Clear();
                         Console.WriteLine("Insert Author:");
                         Console.WriteLine("---------------------------------------------");
                         string authorSearchInput = Console.ReadLine().ToLower();
@@ -128,6 +129,7 @@ namespace LibraryApp
                         Console.Clear();
                         break;
                     case "3":
+                        Console.Clear();
                         Console.WriteLine("Which book would you like to loan?");
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
@@ -182,6 +184,7 @@ namespace LibraryApp
                         break;
                         // If the book can't be found, it'll tell you that as well.
                     case "4":
+                        Console.Clear();
                         Console.WriteLine("Which book are you returning?");
                         Console.WriteLine("---------------------------------------------");
                         for (int i = 0; i < LibraryList.Count; i++)
@@ -268,6 +271,7 @@ namespace LibraryApp
                         switch (inputADMIN)
                         {
                             case "1":
+                                Console.Clear();
                                 break;
                             case "2":
                                 Console.WriteLine("---------------------------------------------");
