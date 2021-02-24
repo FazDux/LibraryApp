@@ -16,6 +16,7 @@ namespace LibraryApp
         
         static void Main(string[] args)
         {
+            Console.Clear();
             // BookClass DefaultBook1 = new BookClass("WiiPressen: A History", "WiiPressen Author Man", false);
             // LibraryList.Add(DefaultBook1);
             // BookClass DefaultBook2 = new BookClass("All About Anime", "Sebastian Anime", false);
@@ -248,6 +249,7 @@ namespace LibraryApp
                         // Stops the while loop, shutting the program down.
                         break;
                     case "6":
+                        Console.Clear();
                         Console.WriteLine("What is the Password?");
                         Console.WriteLine("---------------------------------------------");
                         Console.ReadLine();
