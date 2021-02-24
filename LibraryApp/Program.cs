@@ -240,6 +240,7 @@ namespace LibraryApp
                         Console.WriteLine("---------------------------------------------");
                         Console.WriteLine("Press any key to continue.");
                         Console.ReadKey();
+                        Console.Clear();
                         break;
                     case "7":
                         loopthingy = false;

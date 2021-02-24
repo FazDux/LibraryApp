@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Git\LibraryApp" t="IncludeFlat">
+    <e p="C:\Users\shock\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\shock\.Rider2019.3\system\resharper-host\Local\Transient\ReSharperHost\v193\SolutionCaches\_LibraryApp.792072445.00" t="ExcludeRecursive" />
+    <e p="D:\GitHub\LibraryApp" t="IncludeFlat">
       <e p="LibraryApp" t="IncludeRecursive">
         <e p="bin" t="ExcludeRecursive" />
         <e p="BookClass.cs" t="Include" />
@@ -18,7 +20,5 @@
       <e p="LibraryApp.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />
     </e>
-    <e p="C:\Users\19argo\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\19argo\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_LibraryApp.856425863.00" t="ExcludeRecursive" />
   </component>
 </project>
