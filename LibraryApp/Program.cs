@@ -328,7 +328,6 @@ namespace LibraryApp
                 }
                 // Writes whatever was in LibraryList when the program was stopped to the file.
             }
-
         }
     }
 }
