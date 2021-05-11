@@ -226,3 +226,4 @@ project.lock.json
 
 LibraryApp/bin
 LibraryApp/obj
+.idea/
