@@ -225,5 +225,6 @@ project.lock.json
 #####
 
 LibraryApp/bin
+LibraryApp/bin/Debug
 LibraryApp/obj
 .idea/

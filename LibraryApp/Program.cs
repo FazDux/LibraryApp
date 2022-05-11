@@ -17,32 +17,6 @@ namespace LibraryApp
         static void Main(string[] args)
         {
             Console.Clear();
-            // BookClass DefaultBook1 = new BookClass("WiiPressen: A History", "WiiPressen Author Man", false);
-            // LibraryList.Add(DefaultBook1);
-            // BookClass DefaultBook2 = new BookClass("All About Anime", "Sebastian Anime", false);
-            // LibraryList.Add(DefaultBook2);
-            // BookClass DefaultBook3 = new BookClass("Why Change is EVIL and Must be STOPPED at ALL COSTS", "Doctor Axel, PhD", false);
-            // LibraryList.Add(DefaultBook3);
-            // BookClass DefaultBook4 = new BookClass("How 2 Making Video Games", "Lukas Developer Man", false);
-            // LibraryList.Add(DefaultBook4);
-            // BookClass DefaultBook5 = new BookClass("Kanye > Everything Else", "Will I Am", false);
-            // LibraryList.Add(DefaultBook5);
-            // BookClass DefaultBook6 = new BookClass("What's Actually in YOUR Siracha Mayo?", "WiiPressen Author Man", false);
-            // LibraryList.Add(DefaultBook6);
-            // BookClass DefaultBook7 = new BookClass("Diet foods YOU won't believe!", "David G Stand", false);
-            // LibraryList.Add(DefaultBook7);
-            // BookClass DefaultBook8 = new BookClass("Basketball during a crisis", "Samuel Bell Jackson", false);
-            // LibraryList.Add(DefaultBook8);
-            // BookClass DefaultBook9 = new BookClass("Fashion, a guide", "Lishi Dumpling", false);
-            // LibraryList.Add(DefaultBook9);
-            // BookClass DefaultBook10 = new BookClass("Underrated Ecchi", "Sebastian Anime", false);
-            // LibraryList.Add(DefaultBook10);
-            // BookClass DefaultBook11 = new BookClass("Snaigk", "Lukas Developer Man", false);
-            // LibraryList.Add(DefaultBook11);
-            // This adds default books to the list so you don't have to add them yourself.
-            // I HAVE TO REWRITE ALL THIS SO IT SAVES IN A TEXT FILE AAAAAAAAAAAAAAAAAAAAAAA
-            // :)
-
             using (StreamReader sr = File.OpenText("Books.txt"))
             {
                 string s;
